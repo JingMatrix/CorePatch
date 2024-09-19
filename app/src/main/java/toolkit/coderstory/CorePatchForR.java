@@ -240,6 +240,7 @@ public class CorePatchForR extends XposedHelper implements IXposedHookLoadPackag
                 // https://cs.android.com/android/platform/superproject/+/master:frameworks/base/core/java/android/content/pm/PackageParser.java;l=5947?q=CertCapabilities
                 if (((Integer) param.args[1] != 4) && prefs.getBoolean("digestCreak", true)) {
                     param.setResult(true);
+                    XposedBridge.log("D/" + MainHook.TAG + " " + "set true for checkCapability of " + param.args[1]);
                 }
             }
         });
