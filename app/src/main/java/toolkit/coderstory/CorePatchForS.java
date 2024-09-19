@@ -26,6 +26,7 @@ public class CorePatchForS extends CorePatchForR {
                                 String pPname = (String) XposedHelpers.callMethod(param.args[1], "getPackageName");
                                 if (pPname.contentEquals((String) param.args[0])) {
                                     param.setResult(true);
+                                    XposedBridge.log("D/" + MainHook.TAG + " " + "set result ture for " + param.method);
                                 }
                             }
                         }

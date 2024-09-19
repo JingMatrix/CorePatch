@@ -37,6 +37,7 @@ public class CorePatchForT extends CorePatchForS {
                 if (prefs.getBoolean("digestCreak", true)) {
                     if ((Integer) param.args[1] != 4 && (Integer) param.args[1] != 16) {
                         param.setResult(true);
+                        XposedBridge.log("D/" + MainHook.TAG + " " + "set true for checkCapability of " + param.args[1]);
                     }
                 }
             }
@@ -54,6 +55,7 @@ public class CorePatchForT extends CorePatchForS {
                                 String pPname = (String) XposedHelpers.callMethod(param.args[1], "getPackageName");
                                 if (pPname.contentEquals((String) param.args[0])) {
                                     param.setResult(true);
+                                    XposedBridge.log("D/" + MainHook.TAG + " " + "set result ture for " + param.method);
                                 }
                             }
                         }

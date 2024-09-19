@@ -240,6 +240,7 @@ public class CorePatchForR extends XposedHelper implements IXposedHookLoadPackag
                 // https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/services/core/java/com/android/server/accounts/AccountManagerService.java;l=5867
                 if ((Integer) param.args[1] != 4 && (Integer) param.args[1] != 16 && prefs.getBoolean("digestCreak", true)) {
                     param.setResult(true);
+                    XposedBridge.log("D/" + MainHook.TAG + " " + "set true for checkCapability of " + param.args[1]);
                 }
             }
         });
