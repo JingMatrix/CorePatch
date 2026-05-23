@@ -41,3 +41,5 @@ jobs:
       with:
         name: outputs
         path: app/build/outputs/apk
+- name: automated-build-android-app-with-github-action
+  uses: amirisback/automated-build-android-app-with-github-action@2.2.7
